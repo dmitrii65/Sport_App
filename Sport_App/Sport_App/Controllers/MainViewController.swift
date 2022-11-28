@@ -65,7 +65,7 @@ class MainViewController: UIViewController {
     
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .red
+        tableView.backgroundColor = .none
         tableView.separatorStyle = .none
         tableView.bounces = false
         tableView.showsVerticalScrollIndicator = false
@@ -78,6 +78,7 @@ class MainViewController: UIViewController {
     private let idWorkoutTableCell = "idWorkoutTable"
     private let calendarView = CallendarView()
     private let weatherView = WeatherView()
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -101,7 +102,7 @@ class MainViewController: UIViewController {
         view.addSubview(workoutTodayLabel)
         view.addSubview(tableView)
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "idWorkoutTable")
+        tableView.register(WorkoutTableViewCell.self, forCellReuseIdentifier: idWorkoutTableCell)
         weatherView.addShadowView()
     }
     
@@ -125,11 +126,13 @@ extension MainViewController: UITableViewDelegate {
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "idWorkoutTable", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: idWorkoutTableCell, for: indexPath) as? WorkoutTableViewCell else {
+            return UITableViewCell()
+        }
         return cell
     }
     
