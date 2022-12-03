@@ -61,7 +61,7 @@ class WorkoutTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     private let startButton: UIButton = {
         let button = UIButton(type: .system)
         button.layer.cornerRadius = 10

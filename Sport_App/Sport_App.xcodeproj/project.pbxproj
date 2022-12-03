@@ -23,6 +23,13 @@
 		142F0D07292DDB5800F1963C /* CellCallendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F0D06292DDB5800F1963C /* CellCallendarView.swift */; };
 		14C5CCE32930CF69005B75B8 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5CCE22930CF69005B75B8 /* WorkoutTableViewCell.swift */; };
 		14C5CCE52930E4A3005B75B8 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5CCE42930E4A3005B75B8 /* UIStackView+Extension.swift */; };
+		14C5CCE729375056005B75B8 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5CCE629375056005B75B8 /* StatisticsViewController.swift */; };
+		14C5CCE9293770D5005B75B8 /* UIlabel+ Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5CCE8293770D5005B75B8 /* UIlabel+ Extensions.swift */; };
+		14C5CCEE2938308A005B75B8 /* StatisticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5CCED2938308A005B75B8 /* StatisticTableViewCell.swift */; };
+		14C5CCF02938CFD2005B75B8 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5CCEF2938CFD2005B75B8 /* MainTabBarController.swift */; };
+		14C5CCF229397545005B75B8 /* NewWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5CCF129397545005B75B8 /* NewWorkoutViewController.swift */; };
+		14C5CCF7293A08DD005B75B8 /* DateOfRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5CCF6293A08DD005B75B8 /* DateOfRepeatView.swift */; };
+		14C5CCF9293A090B005B75B8 /* RepsOrTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5CCF8293A090B005B75B8 /* RepsOrTimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +51,13 @@
 		142F0D06292DDB5800F1963C /* CellCallendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCallendarView.swift; sourceTree = "<group>"; };
 		14C5CCE22930CF69005B75B8 /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
 		14C5CCE42930E4A3005B75B8 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
+		14C5CCE629375056005B75B8 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		14C5CCE8293770D5005B75B8 /* UIlabel+ Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIlabel+ Extensions.swift"; sourceTree = "<group>"; };
+		14C5CCED2938308A005B75B8 /* StatisticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewCell.swift; sourceTree = "<group>"; };
+		14C5CCEF2938CFD2005B75B8 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		14C5CCF129397545005B75B8 /* NewWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutViewController.swift; sourceTree = "<group>"; };
+		14C5CCF6293A08DD005B75B8 /* DateOfRepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOfRepeatView.swift; sourceTree = "<group>"; };
+		14C5CCF8293A090B005B75B8 /* RepsOrTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsOrTimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +119,8 @@
 		142F0CF0292B20C500F1963C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				14C5CCF3293A0858005B75B8 /* NewWorkoutVC */,
+				14C5CCEC2938303A005B75B8 /* StatisticsVC */,
 				142F0CF3292B725800F1963C /* Main VC */,
 			);
 			path = Views;
@@ -114,6 +130,9 @@
 			isa = PBXGroup;
 			children = (
 				142F0CDA292B0CB300F1963C /* MainViewController.swift */,
+				14C5CCE629375056005B75B8 /* StatisticsViewController.swift */,
+				14C5CCEF2938CFD2005B75B8 /* MainTabBarController.swift */,
+				14C5CCF129397545005B75B8 /* NewWorkoutViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -155,6 +174,7 @@
 				142F0CFD292DA9A800F1963C /* UIFont+Extensions.swift */,
 				142F0D03292DAC5C00F1963C /* UIView+Extensions.swift */,
 				14C5CCE42930E4A3005B75B8 /* UIStackView+Extension.swift */,
+				14C5CCE8293770D5005B75B8 /* UIlabel+ Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -173,6 +193,47 @@
 			children = (
 				142F0D06292DDB5800F1963C /* CellCallendarView.swift */,
 				14C5CCE22930CF69005B75B8 /* WorkoutTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		14C5CCEC2938303A005B75B8 /* StatisticsVC */ = {
+			isa = PBXGroup;
+			children = (
+				14C5CCFA293A0942005B75B8 /* Cells */,
+			);
+			path = StatisticsVC;
+			sourceTree = "<group>";
+		};
+		14C5CCF3293A0858005B75B8 /* NewWorkoutVC */ = {
+			isa = PBXGroup;
+			children = (
+				14C5CCF5293A087C005B75B8 /* DateOfRepeatView */,
+				14C5CCF4293A0872005B75B8 /* RepsOrTimerView */,
+			);
+			path = NewWorkoutVC;
+			sourceTree = "<group>";
+		};
+		14C5CCF4293A0872005B75B8 /* RepsOrTimerView */ = {
+			isa = PBXGroup;
+			children = (
+				14C5CCF8293A090B005B75B8 /* RepsOrTimerView.swift */,
+			);
+			path = RepsOrTimerView;
+			sourceTree = "<group>";
+		};
+		14C5CCF5293A087C005B75B8 /* DateOfRepeatView */ = {
+			isa = PBXGroup;
+			children = (
+				14C5CCF6293A08DD005B75B8 /* DateOfRepeatView.swift */,
+			);
+			path = DateOfRepeatView;
+			sourceTree = "<group>";
+		};
+		14C5CCFA293A0942005B75B8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				14C5CCED2938308A005B75B8 /* StatisticTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -252,15 +313,22 @@
 			files = (
 				142F0CF7292CDD4900F1963C /* WeatherView.swift in Sources */,
 				142F0CFC292DA99400F1963C /* UIColor+Extensions.swift in Sources */,
+				14C5CCF02938CFD2005B75B8 /* MainTabBarController.swift in Sources */,
 				142F0CFE292DA9A800F1963C /* UIFont+Extensions.swift in Sources */,
 				14C5CCE32930CF69005B75B8 /* WorkoutTableViewCell.swift in Sources */,
 				142F0D07292DDB5800F1963C /* CellCallendarView.swift in Sources */,
 				142F0CDB292B0CB300F1963C /* MainViewController.swift in Sources */,
 				142F0CD7292B0CB300F1963C /* AppDelegate.swift in Sources */,
+				14C5CCE9293770D5005B75B8 /* UIlabel+ Extensions.swift in Sources */,
+				14C5CCE729375056005B75B8 /* StatisticsViewController.swift in Sources */,
 				142F0CD9292B0CB300F1963C /* SceneDelegate.swift in Sources */,
 				142F0D04292DAC5C00F1963C /* UIView+Extensions.swift in Sources */,
+				14C5CCF7293A08DD005B75B8 /* DateOfRepeatView.swift in Sources */,
 				142F0CF5292B728A00F1963C /* CallendarView.swift in Sources */,
+				14C5CCF229397545005B75B8 /* NewWorkoutViewController.swift in Sources */,
+				14C5CCEE2938308A005B75B8 /* StatisticTableViewCell.swift in Sources */,
 				14C5CCE52930E4A3005B75B8 /* UIStackView+Extension.swift in Sources */,
+				14C5CCF9293A090B005B75B8 /* RepsOrTimerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
