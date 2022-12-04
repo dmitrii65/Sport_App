@@ -15,6 +15,7 @@ class RepsOrTimerView: UIView {
         sliderSets.minimumValue = 0
         sliderSets.maximumTrackTintColor = .specialLightBrown
         sliderSets.minimumTrackTintColor = .specialGreen
+        sliderSets.addTarget(self, action: #selector(setsSliderChanged), for: .valueChanged)
         sliderSets.translatesAutoresizingMaskIntoConstraints = false
        return sliderSets
     }()
@@ -35,19 +36,21 @@ class RepsOrTimerView: UIView {
         sliderSets.minimumValue = 0
         sliderSets.maximumTrackTintColor = .specialLightBrown
         sliderSets.minimumTrackTintColor = .specialGreen
+        sliderSets.addTarget(self, action: #selector(sliderRepsChanged), for: .valueChanged)
         sliderSets.translatesAutoresizingMaskIntoConstraints = false
        return sliderSets
     }()
     
     private let timerLabel = UILabel(text:"Timer",font: .robotoMedium18(), textColor: .specialGray)
-    private let numberTimeLabel = UILabel(text:"1 min 30 sec",font: .robotoMedium24(), textColor: .specialGray)
+    private let numberTimeLabel = UILabel(text:"0 sec",font: .robotoMedium24(), textColor: .specialGray)
    
     private lazy var sliderTimer: UISlider = {
         let sliderSets = UISlider()
-        sliderSets.maximumValue = 10
+        sliderSets.maximumValue = 5000
         sliderSets.minimumValue = 0
         sliderSets.maximumTrackTintColor = .specialLightBrown
         sliderSets.minimumTrackTintColor = .specialGreen
+        sliderSets.addTarget(self, action: #selector(sliderTimerChanged), for: .valueChanged)
         sliderSets.translatesAutoresizingMaskIntoConstraints = false
        return sliderSets
     }()
@@ -82,6 +85,39 @@ class RepsOrTimerView: UIView {
         addSubview(timerStackView)
         addSubview(sliderTimer)
         translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    @objc private func setsSliderChanged() {
+        numberSetsLabel.text = "\(Int(sliderSets.value))"
+    }
+    @objc private func sliderRepsChanged() {
+        numberRepeatLabel.text = "\(Int(sliderReps.value))"
+        setNegative(label: timerLabel, numberLabel: numberTimeLabel, slider: sliderTimer)
+        setActive(label: repsLabel, numberLabel: numberRepeatLabel, slider: sliderReps)
+    }
+    
+    @objc private func sliderTimerChanged() {
+        let (min, sec) = { (secs: Int)-> (Int, Int) in
+         return (secs / 60,  secs % 60)}(Int(sliderTimer.value))
+         
+        numberTimeLabel.text = (sec != 0 ? "\(min) min \(sec) sec" : "\(min) min")
+         
+        setNegative(label: repsLabel, numberLabel: numberRepeatLabel, slider: sliderReps)
+        setActive(label: timerLabel, numberLabel: numberTimeLabel, slider: sliderTimer)
+         
+         
+    }
+    private func setNegative(label: UILabel, numberLabel: UILabel, slider: UISlider) {
+        label.alpha = 0.5
+        numberLabel.alpha = 0.5
+        numberLabel.text = "0"
+        slider.alpha = 0.5
+        slider.value = 0
+    }
+    private func setActive( label: UILabel, numberLabel: UILabel, slider: UISlider){
+        label.alpha = 1
+        numberLabel.alpha = 1
+        slider.alpha = 1
         
     }
 }
